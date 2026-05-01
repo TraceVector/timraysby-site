@@ -27,7 +27,24 @@ import Layout from "../layouts/Layout.astro";
     <p class="mt-3 text-xs text-ink-dimmer font-mono">Weekly. No spam. Unsubscribe anytime.</p>
   </section>
 
-  <section class="py-12 border-t border-charcoal-lighter mt-12">
+  <section class="py-6">
+    <div class="grid grid-cols-[80px_1fr] gap-5 items-start">
+      <img
+        src="/headshot.png"
+        alt="Tim Raysby"
+        width="80"
+        height="80"
+        class="w-20 h-20 border border-charcoal-lighter object-cover"
+      />
+      <div class="font-mono text-sm space-y-1.5">
+        <p><span class="text-green-deep mr-2">&gt;</span><span class="text-ink font-medium">Tim Raysby</span></p>
+        <p><span class="text-green-deep mr-2">&gt;</span><span class="text-ink-dim">Intent-driven engineer &middot; AI orchestrator</span></p>
+        <p><a href="/about" class="text-ink-dim hover:text-green transition-colors inline-flex items-center"><span class="text-green-deep mr-2">&gt;</span>More about me →</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 border-t border-charcoal-lighter mt-6">
     <h2 class="text-xs font-mono uppercase tracking-widest text-green mb-8 flex items-center gap-3">
       <span class="w-8 h-px bg-green"></span>
       What I'm doing
