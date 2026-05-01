@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <title>MY TOKENS. MY BUSINESS. — Back print artwork</title>
+  <desc>Vector artwork for upper-back screen print. Terminal-style manifesto block with small asterisk mark. Transparent background.</desc>
+
+  <!-- Terminal prompt -->
+  <text x="200" y="60" text-anchor="middle"
+        font-family="Menlo, Consolas, monospace"
+        font-size="22" font-weight="400"
+        fill="#4FBF7B" opacity="0.7">~/nexus $ whoami</text>
+
+  <!-- Manifesto lines -->
+  <text x="200" y="140" text-anchor="middle"
+        font-family="Menlo, Consolas, monospace"
+        font-size="24" font-weight="500"
+        fill="#4FBF7B">&gt; context.local = true</text>
+  <text x="200" y="180" text-anchor="middle"
+        font-family="Menlo, Consolas, monospace"
+        font-size="24" font-weight="500"
+        fill="#4FBF7B">&gt; prompts.private = 1</text>
+  <text x="200" y="220" text-anchor="middle"
+        font-family="Menlo, Consolas, monospace"
+        font-size="24" font-weight="500"
+        fill="#4FBF7B">&gt; tokens.owner = self</text>
+
+  <!-- Small 6-point asterisk mark -->
+  <g transform="translate(200, 310)">
+    <g transform="rotate(0)"><path d="M 0 -6 L 8 -40 L 0 -48 L -8 -40 Z" fill="#4FBF7B"/></g>
+    <g transform="rotate(60)"><path d="M 0 -6 L 8 -40 L 0 -48 L -8 -40 Z" fill="#4FBF7B"/></g>
+    <g transform="rotate(120)"><path d="M 0 -6 L 8 -40 L 0 -48 L -8 -40 Z" fill="#4FBF7B"/></g>
+    <g transform="rotate(180)"><path d="M 0 -6 L 8 -40 L 0 -48 L -8 -40 Z" fill="#4FBF7B"/></g>
+    <g transform="rotate(240)"><path d="M 0 -6 L 8 -40 L 0 -48 L -8 -40 Z" fill="#4FBF7B"/></g>
+    <g transform="rotate(300)"><path d="M 0 -6 L 8 -40 L 0 -48 L -8 -40 Z" fill="#4FBF7B"/></g>
+  </g>
+</svg>

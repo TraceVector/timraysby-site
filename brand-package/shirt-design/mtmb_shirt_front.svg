@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" width="400" height="500">
+  <title>MY TOKENS. MY BUSINESS. — Front chest print artwork</title>
+  <desc>Vector artwork for screen print or DTG. Six-point node burst asterisk in Nexus Green above wordmark. Scalable. Transparent background.</desc>
+
+  <!-- Stylized 6-point node burst asterisk -->
+  <g transform="translate(200, 150)">
+    <g transform="rotate(0)"><path d="M 0 -16 L 20 -110 L 0 -136 L -20 -110 Z" fill="#4FBF7B" stroke="#2A7A4A" stroke-width="2"/></g>
+    <g transform="rotate(60)"><path d="M 0 -16 L 20 -110 L 0 -136 L -20 -110 Z" fill="#4FBF7B" stroke="#2A7A4A" stroke-width="2"/></g>
+    <g transform="rotate(120)"><path d="M 0 -16 L 20 -110 L 0 -136 L -20 -110 Z" fill="#4FBF7B" stroke="#2A7A4A" stroke-width="2"/></g>
+    <g transform="rotate(180)"><path d="M 0 -16 L 20 -110 L 0 -136 L -20 -110 Z" fill="#4FBF7B" stroke="#2A7A4A" stroke-width="2"/></g>
+    <g transform="rotate(240)"><path d="M 0 -16 L 20 -110 L 0 -136 L -20 -110 Z" fill="#4FBF7B" stroke="#2A7A4A" stroke-width="2"/></g>
+    <g transform="rotate(300)"><path d="M 0 -16 L 20 -110 L 0 -136 L -20 -110 Z" fill="#4FBF7B" stroke="#2A7A4A" stroke-width="2"/></g>
+    <polygon points="0,-20 17.3,-10 17.3,10 0,20 -17.3,10 -17.3,-10" fill="none" stroke="#4FBF7B" stroke-width="3"/>
+    <circle cx="0" cy="0" r="5" fill="#4FBF7B"/>
+  </g>
+
+  <!-- Wordmark with periods -->
+  <text x="200" y="370" text-anchor="middle"
+        font-family="Arial Black, Helvetica Neue, sans-serif"
+        font-size="44" font-weight="900"
+        fill="#4FBF7B" letter-spacing="2">MY TOKENS.</text>
+  <text x="200" y="420" text-anchor="middle"
+        font-family="Arial Black, Helvetica Neue, sans-serif"
+        font-size="44" font-weight="900"
+        fill="#4FBF7B" letter-spacing="2">MY BUSINESS.</text>
+</svg>

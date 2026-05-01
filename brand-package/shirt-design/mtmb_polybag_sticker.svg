@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" width="900" height="900">
+  <title>Polybag Sticker — MY TOKENS. MY BUSINESS.</title>
+  <desc>Square packaging sticker that seals the polybag. 3 inches by 3 inches at 300 DPI. Charcoal on Nexus Green.</desc>
+
+  <!-- Background -->
+  <rect x="0" y="0" width="900" height="900" rx="8" fill="#4FBF7B"/>
+
+  <!-- Corner registration marks -->
+  <path d="M 30 30 L 90 30 L 90 40 L 40 40 L 40 90 L 30 90 Z" fill="#1A1D1A"/>
+  <path d="M 870 30 L 810 30 L 810 40 L 860 40 L 860 90 L 870 90 Z" fill="#1A1D1A"/>
+  <path d="M 30 870 L 90 870 L 90 860 L 40 860 L 40 810 L 30 810 Z" fill="#1A1D1A"/>
+  <path d="M 870 870 L 810 870 L 810 860 L 860 860 L 860 810 L 870 810 Z" fill="#1A1D1A"/>
+
+  <!-- Main logo -->
+  <g transform="translate(450, 360)">
+    <g transform="rotate(0)"><path d="M 0 -22 L 28 -148 L 0 -184 L -28 -148 Z" fill="#1A1D1A"/></g>
+    <g transform="rotate(60)"><path d="M 0 -22 L 28 -148 L 0 -184 L -28 -148 Z" fill="#1A1D1A"/></g>
+    <g transform="rotate(120)"><path d="M 0 -22 L 28 -148 L 0 -184 L -28 -148 Z" fill="#1A1D1A"/></g>
+    <g transform="rotate(180)"><path d="M 0 -22 L 28 -148 L 0 -184 L -28 -148 Z" fill="#1A1D1A"/></g>
+    <g transform="rotate(240)"><path d="M 0 -22 L 28 -148 L 0 -184 L -28 -148 Z" fill="#1A1D1A"/></g>
+    <g transform="rotate(300)"><path d="M 0 -22 L 28 -148 L 0 -184 L -28 -148 Z" fill="#1A1D1A"/></g>
+    <polygon points="0,-24 21,-12 21,12 0,24 -21,12 -21,-12" fill="#4FBF7B" stroke="#1A1D1A" stroke-width="4"/>
+  </g>
+
+  <!-- Wordmark -->
+  <text x="450" y="620" text-anchor="middle"
+        font-family="Arial Black, Helvetica Neue, sans-serif"
+        font-size="60" font-weight="900" fill="#1A1D1A" letter-spacing="6">MY TOKENS.</text>
+  <text x="450" y="700" text-anchor="middle"
+        font-family="Arial Black, Helvetica Neue, sans-serif"
+        font-size="60" font-weight="900" fill="#1A1D1A" letter-spacing="6">MY BUSINESS.</text>
+
+  <!-- Tagline -->
+  <text x="450" y="800" text-anchor="middle"
+        font-family="Menlo, Consolas, monospace"
+        font-size="32" fill="#1A1D1A" opacity="0.7">// ready for deployment</text>
+</svg>

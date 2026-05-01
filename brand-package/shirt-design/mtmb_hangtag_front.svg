@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 1200" width="750" height="1200">
+  <title>Hang Tag Front — MY TOKENS. MY BUSINESS.</title>
+  <desc>Front side of hang tag. 2.5 inches by 4 inches at 300 DPI. Nexus Green on charcoal background.</desc>
+
+  <!-- Background -->
+  <rect x="0" y="0" width="750" height="1200" rx="24" fill="#1A1D1A"/>
+
+  <!-- Hole -->
+  <circle cx="375" cy="80" r="25" fill="#FFFFFF"/>
+
+  <!-- Logo -->
+  <g transform="translate(375, 400)">
+    <g transform="rotate(0)"><path d="M 0 -24 L 30 -160 L 0 -196 L -30 -160 Z" fill="#4FBF7B" stroke="#2A7A4A" stroke-width="3"/></g>
+    <g transform="rotate(60)"><path d="M 0 -24 L 30 -160 L 0 -196 L -30 -160 Z" fill="#4FBF7B" stroke="#2A7A4A" stroke-width="3"/></g>
+    <g transform="rotate(120)"><path d="M 0 -24 L 30 -160 L 0 -196 L -30 -160 Z" fill="#4FBF7B" stroke="#2A7A4A" stroke-width="3"/></g>
+    <g transform="rotate(180)"><path d="M 0 -24 L 30 -160 L 0 -196 L -30 -160 Z" fill="#4FBF7B" stroke="#2A7A4A" stroke-width="3"/></g>
+    <g transform="rotate(240)"><path d="M 0 -24 L 30 -160 L 0 -196 L -30 -160 Z" fill="#4FBF7B" stroke="#2A7A4A" stroke-width="3"/></g>
+    <g transform="rotate(300)"><path d="M 0 -24 L 30 -160 L 0 -196 L -30 -160 Z" fill="#4FBF7B" stroke="#2A7A4A" stroke-width="3"/></g>
+    <polygon points="0,-30 26,-15 26,15 0,30 -26,15 -26,-15" fill="#1A1D1A" stroke="#4FBF7B" stroke-width="4"/>
+    <circle cx="0" cy="0" r="8" fill="#4FBF7B"/>
+  </g>
+
+  <!-- Wordmark -->
+  <text x="375" y="720" text-anchor="middle"
+        font-family="Arial Black, Helvetica Neue, sans-serif"
+        font-size="60" font-weight="900"
+        fill="#4FBF7B" letter-spacing="6">MY TOKENS.</text>
+  <text x="375" y="800" text-anchor="middle"
+        font-family="Arial Black, Helvetica Neue, sans-serif"
+        font-size="60" font-weight="900"
+        fill="#4FBF7B" letter-spacing="6">MY BUSINESS.</text>
+
+  <!-- Divider -->
+  <line x1="180" y1="870" x2="570" y2="870" stroke="#4FBF7B" stroke-width="2" opacity="0.5"/>
+
+  <!-- Taglines -->
+  <text x="375" y="960" text-anchor="middle"
+        font-family="Menlo, Consolas, monospace"
+        font-size="32" fill="#4FBF7B" opacity="0.8">self-hosted · local-first</text>
+  <text x="375" y="1020" text-anchor="middle"
+        font-family="Menlo, Consolas, monospace"
+        font-size="32" fill="#4FBF7B" opacity="0.8">your context, your rules</text>
+
+  <!-- TM -->
+  <text x="375" y="1130" text-anchor="middle"
+        font-family="Arial, Helvetica, sans-serif"
+        font-size="28" fill="#4FBF7B" opacity="0.5" letter-spacing="4">™</text>
+</svg>

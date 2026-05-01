@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" width="900" height="600">
+  <title>Interior Neck Label — MY TOKENS. MY BUSINESS.</title>
+  <desc>Neck label for inside collar. 3 inches by 2 inches at 300 DPI. Can be screen-printed or converted to a woven tear-away tag.</desc>
+
+  <!-- Background -->
+  <rect x="0" y="0" width="900" height="600" rx="16" fill="#1A1D1A"/>
+
+  <!-- Logo mark on left -->
+  <g transform="translate(180, 300)">
+    <g transform="rotate(0)"><path d="M 0 -16 L 20 -96 L 0 -120 L -20 -96 Z" fill="#4FBF7B"/></g>
+    <g transform="rotate(60)"><path d="M 0 -16 L 20 -96 L 0 -120 L -20 -96 Z" fill="#4FBF7B"/></g>
+    <g transform="rotate(120)"><path d="M 0 -16 L 20 -96 L 0 -120 L -20 -96 Z" fill="#4FBF7B"/></g>
+    <g transform="rotate(180)"><path d="M 0 -16 L 20 -96 L 0 -120 L -20 -96 Z" fill="#4FBF7B"/></g>
+    <g transform="rotate(240)"><path d="M 0 -16 L 20 -96 L 0 -120 L -20 -96 Z" fill="#4FBF7B"/></g>
+    <g transform="rotate(300)"><path d="M 0 -16 L 20 -96 L 0 -120 L -20 -96 Z" fill="#4FBF7B"/></g>
+    <polygon points="0,-20 17.3,-10 17.3,10 0,20 -17.3,10 -17.3,-10" fill="#1A1D1A" stroke="#4FBF7B" stroke-width="3"/>
+    <circle cx="0" cy="0" r="6" fill="#4FBF7B"/>
+  </g>
+
+  <!-- Divider -->
+  <line x1="340" y1="150" x2="340" y2="450" stroke="#4FBF7B" stroke-width="2" opacity="0.4"/>
+
+  <!-- Wordmark and details on right -->
+  <text x="400" y="210" font-family="Arial Black, Helvetica Neue, sans-serif"
+        font-size="50" font-weight="900" fill="#4FBF7B" letter-spacing="4">MY TOKENS.</text>
+  <text x="400" y="280" font-family="Arial Black, Helvetica Neue, sans-serif"
+        font-size="50" font-weight="900" fill="#4FBF7B" letter-spacing="4">MY BUSINESS.</text>
+
+  <!-- Spec line (edit size and RN when you have them) -->
+  <text x="400" y="360" font-family="Menlo, Consolas, monospace"
+        font-size="30" fill="#4FBF7B" opacity="0.7">size: [L] · 100% cotton</text>
+  <text x="400" y="410" font-family="Menlo, Consolas, monospace"
+        font-size="30" fill="#4FBF7B" opacity="0.7">RN# [XXXXX] · made in USA</text>
+</svg>
