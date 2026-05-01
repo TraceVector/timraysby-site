@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://timraysby.com/sitemap.xml
