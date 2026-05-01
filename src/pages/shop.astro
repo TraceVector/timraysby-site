@@ -3,26 +3,36 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Shop — Tim Raysby">
-  <h1 class="text-4xl font-bold tracking-tight">Shop</h1>
-  <p class="mt-2 text-sm text-zinc-500">Merch, blueprints, digital products.</p>
+  <p class="text-xs font-mono uppercase tracking-widest text-green mb-4 flex items-center gap-3">
+    <span class="w-8 h-px bg-green"></span>
+    Shop
+  </p>
+  <h1 class="font-serif text-4xl md:text-5xl font-light tracking-tight">
+    Merch, blueprints, <em>digital products</em>.
+  </h1>
 
   <div class="mt-12 grid md:grid-cols-2 gap-6">
-    <div class="p-6 border border-zinc-800 rounded-lg bg-zinc-900/50">
-      <div class="aspect-square bg-zinc-800 rounded mb-4 flex items-center justify-center text-center px-4">
-        <span class="text-2xl font-bold tracking-tight text-zinc-100 leading-tight">MY TOKENS.<br/>MY BUSINESS.</span>
+    <article class="border border-charcoal-lighter bg-charcoal-light p-6">
+      <div class="aspect-square bg-charcoal flex items-center justify-center text-center px-6 border border-charcoal-lighter">
+        <span class="font-serif text-2xl tracking-tight text-ink leading-tight">
+          MY TOKENS.<br/>
+          <em>MY BUSINESS.</em>
+        </span>
       </div>
-      <h2 class="text-lg font-medium">Flagship Tee</h2>
-      <p class="text-sm text-zinc-400 mt-1">The slogan, on cotton.</p>
-      <p class="text-sm text-zinc-500 mt-3">Coming soon.</p>
-    </div>
+      <p class="mt-4 font-mono text-xs text-green-deep">[01]</p>
+      <h2 class="font-serif text-xl mt-1">Flagship Tee</h2>
+      <p class="text-sm text-ink-dim mt-1 font-mono">The slogan, on cotton.</p>
+      <p class="text-xs text-ink-dimmer mt-3 font-mono uppercase tracking-widest">Coming soon</p>
+    </article>
 
-    <div class="p-6 border border-zinc-800 rounded-lg bg-zinc-900/50 opacity-60">
-      <div class="aspect-square bg-zinc-800 rounded mb-4 flex items-center justify-center">
-        <span class="text-zinc-500 text-sm">Future drop</span>
+    <article class="border border-charcoal-lighter bg-charcoal-light p-6 opacity-60">
+      <div class="aspect-square bg-charcoal flex items-center justify-center border border-charcoal-lighter">
+        <span class="text-ink-dimmer text-xs font-mono uppercase tracking-widest">Future drop</span>
       </div>
-      <h2 class="text-lg font-medium">Local-First AI Blueprint</h2>
-      <p class="text-sm text-zinc-400 mt-1">PDF + repo template. Build your own NEXUS.</p>
-      <p class="text-sm text-zinc-500 mt-3">Coming soon.</p>
-    </div>
+      <p class="mt-4 font-mono text-xs text-green-deep">[02]</p>
+      <h2 class="font-serif text-xl mt-1">Local-First AI Blueprint</h2>
+      <p class="text-sm text-ink-dim mt-1 font-mono">PDF + repo template. Build your own NEXUS.</p>
+      <p class="text-xs text-ink-dimmer mt-3 font-mono uppercase tracking-widest">Coming soon</p>
+    </article>
   </div>
 </Layout>

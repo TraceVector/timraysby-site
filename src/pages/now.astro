@@ -5,25 +5,34 @@ const updated = "2026-04-30";
 ---
 
 <Layout title="Now — Tim Raysby">
-  <h1 class="text-4xl font-bold tracking-tight">Now</h1>
-  <p class="mt-2 text-sm text-zinc-500">What I'm working on. Updated {updated}.</p>
+  <p class="text-xs font-mono uppercase tracking-widest text-green mb-4 flex items-center gap-3">
+    <span class="w-8 h-px bg-green"></span>
+    Now
+  </p>
+  <h1 class="font-serif text-4xl md:text-5xl font-light tracking-tight">
+    Currently <em>shipping</em>.
+  </h1>
+  <p class="mt-2 text-xs font-mono text-ink-dimmer">Updated {updated}.</p>
 
-  <div class="mt-10 space-y-8 text-zinc-300">
-    <div>
-      <h2 class="text-lg font-medium text-zinc-100">Building NEXUS</h2>
-      <p class="mt-1 text-sm text-zinc-400">Local-first personal AI infrastructure. Voice control, autonomous research, content production — all on a single workstation, no cloud dependency.</p>
-    </div>
+  <div class="mt-12 space-y-10">
+    <article>
+      <p class="font-mono text-xs text-green-deep">[01]</p>
+      <h2 class="font-serif text-2xl mt-2">Building NEXUS</h2>
+      <p class="mt-2 text-sm text-ink-dim font-mono max-w-prose">Local-first personal AI infrastructure. Voice control, autonomous research, content production — all on a single workstation, no cloud dependency.</p>
+    </article>
 
-    <div>
-      <h2 class="text-lg font-medium text-zinc-100">Shipping this site</h2>
-      <p class="mt-1 text-sm text-zinc-400">Astro on Cloudflare Pages. The page you're reading is the first proof.</p>
-    </div>
+    <article>
+      <p class="font-mono text-xs text-green-deep">[02]</p>
+      <h2 class="font-serif text-2xl mt-2">Shipping this site</h2>
+      <p class="mt-2 text-sm text-ink-dim font-mono max-w-prose">Astro on Cloudflare Workers. The page you are reading is the first proof.</p>
+    </article>
 
-    <div>
-      <h2 class="text-lg font-medium text-zinc-100">Writing weekly</h2>
-      <p class="mt-1 text-sm text-zinc-400">Sunday newsletter on local-first AI for operators who don't want to pay rent on intelligence.</p>
-    </div>
+    <article>
+      <p class="font-mono text-xs text-green-deep">[03]</p>
+      <h2 class="font-serif text-2xl mt-2">Writing weekly</h2>
+      <p class="mt-2 text-sm text-ink-dim font-mono max-w-prose">Sunday newsletter on local-first AI for operators who do not want to pay rent on intelligence.</p>
+    </article>
   </div>
 
-  <p class="mt-16 text-xs text-zinc-500">Inspired by the <a href="https://nownownow.com/about" class="underline hover:text-zinc-300">/now page movement</a>.</p>
+  <p class="mt-16 text-xs text-ink-dimmer font-mono">Inspired by the <a href="https://nownownow.com/about" class="underline hover:text-green transition-colors">/now page movement</a>.</p>
 </Layout>
