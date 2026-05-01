@@ -1,0 +1,48 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Tim Raysby — local-first AI",
+  description = "I build local-first AI systems that don't rent your data to anyone."
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+  </head>
+  <body class="bg-zinc-950 text-zinc-100 font-sans antialiased min-h-screen flex flex-col">
+    <header class="border-b border-zinc-800">
+      <nav class="max-w-3xl mx-auto px-6 py-5 flex items-center justify-between text-sm">
+        <a href="/" class="font-semibold tracking-tight">timraysby</a>
+        <ul class="flex gap-5 text-zinc-400">
+          <li><a href="/writing" class="hover:text-zinc-100">writing</a></li>
+          <li><a href="/now" class="hover:text-zinc-100">now</a></li>
+          <li><a href="/consulting" class="hover:text-zinc-100">consulting</a></li>
+          <li><a href="/shop" class="hover:text-zinc-100">shop</a></li>
+          <li><a href="/about" class="hover:text-zinc-100">about</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="flex-1 max-w-3xl mx-auto w-full px-6 py-16">
+      <slot />
+    </main>
+    <footer class="border-t border-zinc-800">
+      <div class="max-w-3xl mx-auto px-6 py-8 text-sm text-zinc-500 flex justify-between">
+        <span>© 2026 Tim Raysby</span>
+        <a href="mailto:contact@timraysby.com" class="hover:text-zinc-300">contact@timraysby.com</a>
+      </div>
+    </footer>
+  </body>
+</html>

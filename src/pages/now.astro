@@ -1,0 +1,29 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const updated = "2026-04-30";
+---
+
+<Layout title="Now — Tim Raysby">
+  <h1 class="text-4xl font-bold tracking-tight">Now</h1>
+  <p class="mt-2 text-sm text-zinc-500">What I'm working on. Updated {updated}.</p>
+
+  <div class="mt-10 space-y-8 text-zinc-300">
+    <div>
+      <h2 class="text-lg font-medium text-zinc-100">Building NEXUS</h2>
+      <p class="mt-1 text-sm text-zinc-400">Local-first personal AI infrastructure. Voice control, autonomous research, content production — all on a single workstation, no cloud dependency.</p>
+    </div>
+
+    <div>
+      <h2 class="text-lg font-medium text-zinc-100">Shipping this site</h2>
+      <p class="mt-1 text-sm text-zinc-400">Astro on Cloudflare Pages. The page you're reading is the first proof.</p>
+    </div>
+
+    <div>
+      <h2 class="text-lg font-medium text-zinc-100">Writing weekly</h2>
+      <p class="mt-1 text-sm text-zinc-400">Sunday newsletter on local-first AI for operators who don't want to pay rent on intelligence.</p>
+    </div>
+  </div>
+
+  <p class="mt-16 text-xs text-zinc-500">Inspired by the <a href="https://nownownow.com/about" class="underline hover:text-zinc-300">/now page movement</a>.</p>
+</Layout>
