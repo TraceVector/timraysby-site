@@ -29,3 +29,7 @@ body {
   background-size: 80px 80px;
   background-attachment: fixed;
 }
+
+.lmb-dismissed #lead-magnet-banner {
+  display: none;
+}

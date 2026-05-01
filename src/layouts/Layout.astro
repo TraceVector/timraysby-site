@@ -59,23 +59,41 @@ const personSchema = {
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet" />
 
     <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+
+    <script is:inline>
+      try {
+        if (localStorage.getItem("lead-magnet-dismissed") === "1") {
+          document.documentElement.classList.add("lmb-dismissed");
+        }
+      } catch (_) {}
+    </script>
   </head>
   <body class="bg-charcoal text-ink font-mono antialiased min-h-screen flex flex-col">
-    <a
-      href="https://subscribepage.io/8zBWfY"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="block bg-charcoal-light border-b border-green/40 hover:bg-charcoal-lighter transition-colors"
-    >
-      <div class="max-w-3xl mx-auto px-6 py-2.5 text-xs font-mono flex items-center justify-between gap-4">
-        <span class="text-ink-dim">
-          <span class="text-green font-medium uppercase tracking-widest">Free</span>
-          <span class="ml-3 text-ink">The Judgement Audit</span>
-          <span class="ml-3 text-ink-dimmer hidden sm:inline">— a free template, on me.</span>
-        </span>
-        <span class="text-green flex-shrink-0" aria-hidden="true">↗</span>
+    <div id="lead-magnet-banner" class="bg-charcoal-light border-b border-green/40">
+      <div class="max-w-3xl mx-auto px-6 py-2.5 flex items-center gap-3">
+        <a
+          href="https://subscribepage.io/8zBWfY"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex-1 min-w-0 text-xs font-mono flex items-center gap-3 group"
+        >
+          <span class="text-green font-medium uppercase tracking-widest flex-shrink-0">Free</span>
+          <span class="text-ink truncate group-hover:text-green transition-colors">
+            <span class="font-medium">The Judgment Audit</span>
+            <span class="text-ink-dim hidden sm:inline">— find the 90% of your day that doesn't need your brain.</span>
+          </span>
+          <span class="text-green flex-shrink-0 ml-auto" aria-hidden="true">↗</span>
+        </a>
+        <button
+          id="lead-magnet-dismiss"
+          type="button"
+          aria-label="Dismiss"
+          class="text-ink-dimmer hover:text-ink transition-colors flex-shrink-0 text-base leading-none px-1"
+        >
+          ×
+        </button>
       </div>
-    </a>
+    </div>
 
     <header class="border-b border-charcoal-lighter">
       <nav class="max-w-3xl mx-auto px-6 py-5 flex items-center justify-between text-sm">
@@ -112,5 +130,19 @@ const personSchema = {
         <a href="mailto:contact@timraysby.com" class="hover:text-ink-dim transition-colors">contact@timraysby.com</a>
       </div>
     </footer>
+
+    <script is:inline>
+      (function () {
+        var btn = document.getElementById("lead-magnet-dismiss");
+        var banner = document.getElementById("lead-magnet-banner");
+        if (!btn || !banner) return;
+        btn.addEventListener("click", function () {
+          try {
+            localStorage.setItem("lead-magnet-dismissed", "1");
+          } catch (_) {}
+          banner.style.display = "none";
+        });
+      })();
+    </script>
   </body>
 </html>
