@@ -1,5 +1,25 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: 'Inter', system-ui, sans-serif;
+  /* Charcoal scale — backgrounds and borders */
+  --color-charcoal: #0F1110;
+  --color-charcoal-light: #1A1D1A;
+  --color-charcoal-lighter: #252825;
+
+  /* Ink scale — text on dark backgrounds */
+  --color-ink: #E8EDE8;
+  --color-ink-dim: #8A938A;
+  --color-ink-dimmer: #565A56;
+
+  /* Nexus Green — primary accent */
+  --color-green: #4FBF7B;
+  --color-green-deep: #2A7A4A;
+
+  /* Typography */
+  --font-serif: 'Fraunces', 'Times New Roman', serif;
+  --font-mono: 'JetBrains Mono', 'Menlo', 'Consolas', monospace;
+}
+
+:root {
+  --green-glow: rgba(79, 191, 123, 0.15);
 }
