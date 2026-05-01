@@ -3,15 +3,37 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="About — Tim Raysby">
-  <h1 class="text-4xl font-bold tracking-tight">About</h1>
+  <section class="grid md:grid-cols-[200px_1fr] gap-10 items-start">
+    <img
+      src="/headshot.png"
+      alt="Tim Raysby"
+      width="200"
+      height="200"
+      class="w-full md:w-48 h-auto border border-charcoal-lighter"
+    />
 
-  <div class="mt-8 space-y-6 text-zinc-300 max-w-2xl">
-    <p class="text-xl">I'm Tim. I'm an operator who builds AI infrastructure that runs on the machine in front of me — not in someone else's datacenter.</p>
+    <div>
+      <p class="text-xs font-mono uppercase tracking-widest text-green mb-4 flex items-center gap-3">
+        <span class="w-8 h-px bg-green"></span>
+        About
+      </p>
+      <h1 class="font-serif text-4xl md:text-5xl font-light tracking-tight leading-tight">
+        Intent-driven engineer.<br/>
+        <em>AI orchestrator.</em><br/>
+        Problem solver.
+      </h1>
 
-    <p>Most of the AI economy is a tax on attention. I'm building the alternative: software that respects the two scarcest resources you have — your tokens and your time.</p>
+      <div class="mt-10 space-y-6 text-ink-dim text-sm font-mono max-w-prose">
+        <p>I build agentic AI systems and ship production code where ownership meets velocity.</p>
 
-    <p>By day I work as a senior engineer at a major insurer. Evenings and weekends I build NEXUS, my personal AI infrastructure. Everything you see here is built on it.</p>
+        <p>Most of the AI economy is a tax on attention — every prompt, every memory, every artifact you produce billed by the token, owned by someone else. There is a different way: infrastructure that runs on the machine in front of you.</p>
 
-    <p class="text-sm text-zinc-500">More to come.</p>
-  </div>
+        <p>By day I am a senior engineer at a major insurer. Evenings and weekends I build NEXUS, my personal AI infrastructure. This site, every essay, every product — produced on it.</p>
+      </div>
+
+      <p class="mt-12 font-mono text-xs text-green tracking-widest uppercase">
+        build &middot; orchestrate &middot; solve
+      </p>
+    </div>
+  </section>
 </Layout>
