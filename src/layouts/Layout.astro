@@ -16,7 +16,6 @@ const {
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
@@ -26,26 +25,40 @@ const {
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,500&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet" />
   </head>
-  <body class="bg-zinc-950 text-zinc-100 font-sans antialiased min-h-screen flex flex-col">
-    <header class="border-b border-zinc-800">
+  <body class="bg-charcoal text-ink font-mono antialiased min-h-screen flex flex-col">
+    <header class="border-b border-charcoal-lighter">
       <nav class="max-w-3xl mx-auto px-6 py-5 flex items-center justify-between text-sm">
-        <a href="/" class="font-semibold tracking-tight">timraysby</a>
-        <ul class="flex gap-5 text-zinc-400">
-          <li><a href="/writing" class="hover:text-zinc-100">writing</a></li>
-          <li><a href="/now" class="hover:text-zinc-100">now</a></li>
-          <li><a href="/consulting" class="hover:text-zinc-100">consulting</a></li>
-          <li><a href="/shop" class="hover:text-zinc-100">shop</a></li>
-          <li><a href="/about" class="hover:text-zinc-100">about</a></li>
+        <a href="/" class="flex items-center gap-2 font-medium hover:text-green transition-colors">
+          <svg viewBox="-30 -30 60 60" class="w-5 h-5" aria-hidden="true">
+            <g fill="#4FBF7B">
+              <path d="M 0 -4 L 4 -24 L 0 -28 L -4 -24 Z"/>
+              <g transform="rotate(60)"><path d="M 0 -4 L 4 -24 L 0 -28 L -4 -24 Z"/></g>
+              <g transform="rotate(120)"><path d="M 0 -4 L 4 -24 L 0 -28 L -4 -24 Z"/></g>
+              <g transform="rotate(180)"><path d="M 0 -4 L 4 -24 L 0 -28 L -4 -24 Z"/></g>
+              <g transform="rotate(240)"><path d="M 0 -4 L 4 -24 L 0 -28 L -4 -24 Z"/></g>
+              <g transform="rotate(300)"><path d="M 0 -4 L 4 -24 L 0 -28 L -4 -24 Z"/></g>
+            </g>
+            <polygon points="0,-2.5 2.17,-1.25 2.17,1.25 0,2.5 -2.17,1.25 -2.17,-1.25" fill="none" stroke="#4FBF7B" stroke-width="0.6"/>
+            <circle cx="0" cy="0" r="0.5" fill="#4FBF7B"/>
+          </svg>
+          <span>timraysby</span>
+        </a>
+        <ul class="flex gap-5 text-ink-dim">
+          <li><a href="/writing" class="hover:text-ink transition-colors">writing</a></li>
+          <li><a href="/now" class="hover:text-ink transition-colors">now</a></li>
+          <li><a href="/consulting" class="hover:text-ink transition-colors">consulting</a></li>
+          <li><a href="/shop" class="hover:text-ink transition-colors">shop</a></li>
+          <li><a href="/about" class="hover:text-ink transition-colors">about</a></li>
         </ul>
       </nav>
     </header>
     <main class="flex-1 max-w-3xl mx-auto w-full px-6 py-16">
       <slot />
     </main>
-    <footer class="border-t border-zinc-800">
-      <div class="max-w-3xl mx-auto px-6 py-8 text-sm text-zinc-500 flex justify-between">
+    <footer class="border-t border-charcoal-lighter">
+      <div class="max-w-3xl mx-auto px-6 py-8 text-xs text-ink-dimmer flex justify-between font-mono">
         <span>© 2026 Tim Raysby</span>
-        <a href="mailto:contact@timraysby.com" class="hover:text-zinc-300">contact@timraysby.com</a>
+        <a href="mailto:contact@timraysby.com" class="hover:text-ink-dim transition-colors">contact@timraysby.com</a>
       </div>
     </footer>
   </body>

@@ -23,3 +23,9 @@
 :root {
   --green-glow: rgba(79, 191, 123, 0.15);
 }
+
+body {
+  background-image: radial-gradient(circle, rgba(79, 191, 123, 0.05) 1px, transparent 1px);
+  background-size: 80px 80px;
+  background-attachment: fixed;
+}
