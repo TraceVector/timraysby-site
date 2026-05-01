@@ -3,31 +3,50 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-  <section class="py-12">
-    <h1 class="text-5xl md:text-7xl font-bold tracking-tight leading-none">MY TOKENS.<br/>MY BUSINESS.</h1>
-    <p class="mt-6 text-xl text-zinc-300 italic max-w-2xl">I build local-first AI systems that don't rent your data to anyone.</p>
+  <section class="py-12 relative">
+    <div class="absolute -top-2 -left-2 w-3 h-3 border-l border-t border-green/60" aria-hidden="true"></div>
+    <div class="absolute -top-2 -right-2 w-3 h-3 border-r border-t border-green/60" aria-hidden="true"></div>
 
-    <form class="mt-10 flex gap-2 max-w-md" action="#" method="post">
-      <input type="email" placeholder="you@domain.com" required class="flex-1 bg-zinc-900 border border-zinc-700 rounded px-4 py-3 text-sm focus:outline-none focus:border-zinc-500" />
-      <button type="submit" class="bg-zinc-100 text-zinc-950 px-5 py-3 rounded text-sm font-medium hover:bg-white">Get the build log</button>
+    <p class="text-xs font-mono text-green mb-8 flex items-center">
+      <span class="text-green">$</span>
+      <span class="ml-2">whoami</span>
+      <span class="ml-1 inline-block w-2 h-3 bg-green animate-pulse" aria-hidden="true"></span>
+    </p>
+
+    <h1 class="font-serif text-5xl md:text-7xl font-light tracking-tight leading-none">
+      MY TOKENS.<br/>
+      <em>MY BUSINESS.</em>
+    </h1>
+
+    <p class="mt-8 text-base text-ink-dim font-mono">Self-hosted by default.</p>
+
+    <form class="mt-10 flex max-w-md" action="#" method="post">
+      <input type="email" placeholder="you@domain.com" required class="flex-1 bg-charcoal-light border border-charcoal-lighter px-4 py-3 text-sm focus:outline-none focus:border-green text-ink font-mono" />
+      <button type="submit" class="bg-green text-charcoal px-5 py-3 text-xs font-mono font-medium uppercase tracking-widest hover:bg-green-deep transition-colors">Subscribe →</button>
     </form>
-    <p class="mt-3 text-xs text-zinc-500">Weekly. No spam. Unsubscribe anytime.</p>
+    <p class="mt-3 text-xs text-ink-dimmer font-mono">Weekly. No spam. Unsubscribe anytime.</p>
   </section>
 
-  <section class="py-12 border-t border-zinc-800 mt-12">
-    <h2 class="text-sm uppercase tracking-wider text-zinc-500">What I'm doing</h2>
-    <div class="mt-6 grid md:grid-cols-3 gap-6 text-sm">
-      <a href="/writing" class="group">
-        <h3 class="text-lg font-medium group-hover:text-white">Writing →</h3>
-        <p class="text-zinc-400 mt-1">Essays, build logs, newsletter.</p>
+  <section class="py-12 border-t border-charcoal-lighter mt-12">
+    <h2 class="text-xs font-mono uppercase tracking-widest text-green mb-8 flex items-center gap-3">
+      <span class="w-8 h-px bg-green"></span>
+      What I'm doing
+    </h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <a href="/writing" class="group block">
+        <p class="font-mono text-xs text-green-deep">[01]</p>
+        <h3 class="font-serif text-2xl mt-2 group-hover:text-green transition-colors">Writing</h3>
+        <p class="text-sm text-ink-dim mt-2 font-mono">Essays, build logs, newsletter.</p>
       </a>
-      <a href="/consulting" class="group">
-        <h3 class="text-lg font-medium group-hover:text-white">Consulting →</h3>
-        <p class="text-zinc-400 mt-1">Local-AI architecture for teams that want sovereignty.</p>
+      <a href="/consulting" class="group block">
+        <p class="font-mono text-xs text-green-deep">[02]</p>
+        <h3 class="font-serif text-2xl mt-2 group-hover:text-green transition-colors">Consulting</h3>
+        <p class="text-sm text-ink-dim mt-2 font-mono">Local-AI architecture for teams that want sovereignty.</p>
       </a>
-      <a href="/shop" class="group">
-        <h3 class="text-lg font-medium group-hover:text-white">Shop →</h3>
-        <p class="text-zinc-400 mt-1">Merch, blueprints, digital products.</p>
+      <a href="/shop" class="group block">
+        <p class="font-mono text-xs text-green-deep">[03]</p>
+        <h3 class="font-serif text-2xl mt-2 group-hover:text-green transition-colors">Shop</h3>
+        <p class="text-sm text-ink-dim mt-2 font-mono">Merch, blueprints, digital products.</p>
       </a>
     </div>
   </section>
