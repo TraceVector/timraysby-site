@@ -9,6 +9,10 @@ import cloudflare from '@astrojs/cloudflare';
 export default defineConfig({
   site: 'https://timraysby.com',
 
+  // Astro 6 default: static + on-demand. Pages prerender by default; routes
+  // that `export const prerender = false` become Worker functions. Used by
+  // /api/consulting-waitlist.
+
   vite: {
     plugins: [tailwindcss()]
   },
