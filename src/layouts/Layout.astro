@@ -4,13 +4,11 @@ import "../styles/global.css";
 interface Props {
   title?: string;
   description?: string;
-  wide?: boolean;
 }
 
 const {
   title = "Tim Raysby — local-first AI",
   description = "I build local-first AI systems that don't rent your data to anyone.",
-  wide = false,
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -89,7 +87,7 @@ const personSchema = {
         </ul>
       </nav>
     </header>
-    <main class={`flex-1 ${wide ? 'max-w-5xl' : 'max-w-3xl'} mx-auto w-full px-4 sm:px-6 py-8 sm:py-16`}>
+    <main class="flex-1 max-w-3xl mx-auto w-full px-4 sm:px-6 py-8 sm:py-16">
       <slot />
     </main>
     <footer class="border-t border-charcoal-lighter">
