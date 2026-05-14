@@ -66,7 +66,7 @@ const personSchema = {
   <body class="bg-charcoal text-ink font-mono antialiased min-h-screen flex flex-col">
     <header class="border-b border-charcoal-lighter">
       <nav class="max-w-3xl mx-auto px-4 sm:px-6 py-4 sm:py-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-sm">
-        <a href="/" class="flex items-center gap-2 font-medium hover:text-green transition-colors">
+        <a href="/" aria-label="Tim Raysby — home" class="flex items-center font-medium hover:text-green transition-colors">
           <svg viewBox="-30 -30 60 60" class="w-7 h-7 sm:w-8 sm:h-8" aria-hidden="true">
             <g fill="#4FBF7B">
               <path d="M 0 -4 L 4 -24 L 0 -28 L -4 -24 Z"/>
@@ -79,7 +79,6 @@ const personSchema = {
             <polygon points="0,-2.5 2.17,-1.25 2.17,1.25 0,2.5 -2.17,1.25 -2.17,-1.25" fill="none" stroke="#4FBF7B" stroke-width="0.6"/>
             <circle cx="0" cy="0" r="0.5" fill="#4FBF7B"/>
           </svg>
-          <span>timraysby</span>
         </a>
         <ul class="flex flex-wrap gap-x-4 gap-y-2 sm:gap-x-5 text-ink-dim text-xs sm:text-sm">
           <li><a href="/writing" class="hover:text-ink transition-colors">writing</a></li>
