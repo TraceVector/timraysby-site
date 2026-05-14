@@ -15,6 +15,10 @@
  *   502 { error: "..." }             — MailerLite upstream error
  */
 import type { APIRoute } from 'astro';
+// Astro v6 removed Astro.locals.runtime.env. The new pattern is to import
+// `env` directly from `cloudflare:workers`. See:
+// https://docs.astro.build/en/guides/integrations-guide/cloudflare/
+import { env } from 'cloudflare:workers';
 
 export const prerender = false;
 
@@ -32,7 +36,7 @@ function jsonResponse(body: unknown, status: number): Response {
   });
 }
 
-export const POST: APIRoute = async ({ request, locals }) => {
+export const POST: APIRoute = async ({ request }) => {
   // Parse — accept both form-data and JSON for flexibility.
   let email = '';
   try {
@@ -52,9 +56,9 @@ export const POST: APIRoute = async ({ request, locals }) => {
     return jsonResponse({ error: 'Please enter a valid email address.' }, 400);
   }
 
-  const env = ((locals as { runtime?: { env?: Env } })?.runtime?.env) || {};
-  const apiKey = env.MAILERLITE_API_KEY;
-  const groupId = env.MAILERLITE_CONSULTING_GROUP_ID;
+  const typedEnv = env as Env;
+  const apiKey = typedEnv.MAILERLITE_API_KEY;
+  const groupId = typedEnv.MAILERLITE_CONSULTING_GROUP_ID;
 
   if (!apiKey) {
     return jsonResponse(
