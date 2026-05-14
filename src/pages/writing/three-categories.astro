@@ -1,0 +1,109 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const published = "2026-05-14";
+const reading = "5 min";
+---
+
+<Layout
+  title="Three Categories of AI Products in 2026 — Tim Raysby"
+  description="Most public AI businesses fall into one of three categories. Two are crowded. The third is where I work — local-first deterministic AI where the model proposes and code disposes."
+>
+  <article>
+    <p class="text-xs font-mono uppercase tracking-widest text-green mb-4 flex items-center gap-3">
+      <span class="w-8 h-px bg-green"></span>
+      Essay
+    </p>
+
+    <h1 class="font-serif text-3xl sm:text-4xl md:text-5xl font-light tracking-tight leading-tight">
+      Three Categories of AI Products in 2026
+    </h1>
+
+    <p class="mt-3 text-xs font-mono text-ink-dimmer">
+      Published {published} · {reading} read
+    </p>
+
+    <div class="mt-10 sm:mt-12 space-y-6 text-sm sm:text-base text-ink-dim font-mono leading-relaxed max-w-prose">
+      <p>
+        Most public "AI businesses" land in one of three categories. Two are crowded. The third is where I work.
+      </p>
+
+      <p>
+        <span class="text-ink font-medium">Wrapper.</span> A thin interface over a vendor API. The product is the prompt template and the UI. No moat, no portable data, vendor decides pricing and policy. Customers are renting the same model the next ten wrappers also rent.
+      </p>
+
+      <p>
+        <span class="text-ink font-medium">Native-AI app.</span> Autonomous agents marketed as a paid service. Real engineering, often impressive demos. Risk compounds with runtime &mdash; every additional cycle is another chance for something to go silently wrong behind the service. The category is real; the operational story is harder than the demo.
+      </p>
+
+      <p>
+        <span class="text-ink font-medium">Local-first deterministic.</span> AI proposes, deterministic code disposes. Models return text into a function call. Code on either side decides what the text means and whether anything gets executed. The text is never executed directly. Failures are boring &mdash; bad output gets validated and rejected, logged, surfaced for review. Customer data does not leave the operator's hardware.
+      </p>
+
+      <p class="text-ink">
+        This is the lane I build in.
+      </p>
+
+      <p>
+        I'm not arguing the first two categories are wrong, or that the people building them are. The math from the agent-safety frameworks circulating right now is correct: risk compounds with runtime. The conclusion that surprises people is that the smallest possible attack surface wins by default &mdash; and the smallest possible attack surface is the one that doesn't exist.
+      </p>
+
+      <p>
+        Most teams will spend twelve to eighteen months arriving at that conclusion through remediation engineering. I started there.
+      </p>
+    </div>
+
+    <section class="mt-16 pt-10 border-t border-charcoal-lighter">
+      <h2 class="text-xs font-mono uppercase tracking-widest text-green mb-6 flex items-center gap-3">
+        <span class="w-8 h-px bg-green"></span>
+        What customers actually get
+      </h2>
+
+      <ul class="space-y-4 text-sm sm:text-base text-ink-dim font-mono leading-relaxed max-w-prose">
+        <li class="flex gap-4">
+          <span class="text-green-deep shrink-0">[01]</span>
+          <span>A system that handles the work between intent and execution, so the operator focuses on judgment calls instead of mechanics.</span>
+        </li>
+        <li class="flex gap-4">
+          <span class="text-green-deep shrink-0">[02]</span>
+          <span>An audit trail by default. Every meaningful action is logged, with the reason and the state of the data at the time.</span>
+        </li>
+        <li class="flex gap-4">
+          <span class="text-green-deep shrink-0">[03]</span>
+          <span>Recoverable failures. The system fails loud, in code-side errors engineering already knows how to debug, not in "the agent deleted production."</span>
+        </li>
+        <li class="flex gap-4">
+          <span class="text-green-deep shrink-0">[04]</span>
+          <span>Data that stays where compliance put it. No vendor account in the loop.</span>
+        </li>
+        <li class="flex gap-4">
+          <span class="text-green-deep shrink-0">[05]</span>
+          <span>An exit ramp. If you want to move off, the data and the rules go with you.</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="mt-16 pt-10 border-t border-charcoal-lighter">
+      <h2 class="text-xs font-mono uppercase tracking-widest text-green mb-6 flex items-center gap-3">
+        <span class="w-8 h-px bg-green"></span>
+        Who this is for
+      </h2>
+
+      <div class="space-y-6 text-sm sm:text-base text-ink-dim font-mono leading-relaxed max-w-prose">
+        <p>
+          If your AI work needs to live inside the same trust boundary as the rest of your operation &mdash; your customers' data, your regulated workflows, your decisions you can't afford to outsource &mdash; <a href="/consulting" class="text-green hover:text-ink transition-colors">talk to me</a>.
+        </p>
+
+        <p>
+          If your AI work can live in someone else's vendor account, you have cheaper options that are correct for you. I'll refer you to them.
+        </p>
+      </div>
+    </section>
+
+    <div class="mt-20 pt-8 border-t border-charcoal-lighter">
+      <a href="/writing" class="text-xs font-mono text-ink-dim hover:text-green transition-colors">
+        ← all writing
+      </a>
+    </div>
+  </article>
+</Layout>

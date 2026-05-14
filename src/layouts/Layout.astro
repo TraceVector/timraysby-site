@@ -34,8 +34,9 @@ const personSchema = {
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#0F1110" />
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalURL} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -62,9 +63,9 @@ const personSchema = {
   </head>
   <body class="bg-charcoal text-ink font-mono antialiased min-h-screen flex flex-col">
     <header class="border-b border-charcoal-lighter">
-      <nav class="max-w-3xl mx-auto px-6 py-5 flex items-center justify-between text-sm">
+      <nav class="max-w-3xl mx-auto px-4 sm:px-6 py-4 sm:py-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-sm">
         <a href="/" class="flex items-center gap-2 font-medium hover:text-green transition-colors">
-          <svg viewBox="-30 -30 60 60" class="w-8 h-8" aria-hidden="true">
+          <svg viewBox="-30 -30 60 60" class="w-7 h-7 sm:w-8 sm:h-8" aria-hidden="true">
             <g fill="#4FBF7B">
               <path d="M 0 -4 L 4 -24 L 0 -28 L -4 -24 Z"/>
               <g transform="rotate(60)"><path d="M 0 -4 L 4 -24 L 0 -28 L -4 -24 Z"/></g>
@@ -78,7 +79,7 @@ const personSchema = {
           </svg>
           <span>timraysby</span>
         </a>
-        <ul class="flex gap-5 text-ink-dim">
+        <ul class="flex flex-wrap gap-x-4 gap-y-2 sm:gap-x-5 text-ink-dim text-xs sm:text-sm">
           <li><a href="/writing" class="hover:text-ink transition-colors">writing</a></li>
           <li><a href="/now" class="hover:text-ink transition-colors">building</a></li>
           <li><a href="/consulting" class="hover:text-ink transition-colors">consulting</a></li>
@@ -87,13 +88,13 @@ const personSchema = {
         </ul>
       </nav>
     </header>
-    <main class="flex-1 max-w-3xl mx-auto w-full px-6 py-16">
+    <main class="flex-1 max-w-3xl mx-auto w-full px-4 sm:px-6 py-8 sm:py-16">
       <slot />
     </main>
     <footer class="border-t border-charcoal-lighter">
-      <div class="max-w-3xl mx-auto px-6 py-8 text-xs text-ink-dimmer flex justify-between font-mono">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 py-6 sm:py-8 text-xs text-ink-dimmer flex flex-col sm:flex-row sm:justify-between gap-2 font-mono">
         <span>© 2026 Tim Raysby</span>
-        <a href="mailto:contact@timraysby.com" class="hover:text-ink-dim transition-colors">contact@timraysby.com</a>
+        <a href="mailto:contact@timraysby.com" class="hover:text-ink-dim transition-colors break-all">contact@timraysby.com</a>
       </div>
     </footer>
   </body>
