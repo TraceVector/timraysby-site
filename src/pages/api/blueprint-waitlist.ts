@@ -1,6 +1,7 @@
 /**
- * POST /api/consulting-waitlist — adds subscribers to the consulting waitlist.
- * Env: MAILERLITE_API_KEY + MAILERLITE_CONSULTING_GROUP_ID.
+ * POST /api/blueprint-waitlist — adds subscribers to the Local-First AI
+ * Blueprint waitlist (PDF + repo template, "Coming soon" on the shop page).
+ * Env: MAILERLITE_API_KEY + MAILERLITE_BLUEPRINT_GROUP_ID.
  * Shared logic lives in src/lib/mailerlite.ts.
  */
 import type { APIRoute } from 'astro';
@@ -11,7 +12,7 @@ export const prerender = false;
 
 interface Env {
   MAILERLITE_API_KEY?: string;
-  MAILERLITE_CONSULTING_GROUP_ID?: string;
+  MAILERLITE_BLUEPRINT_GROUP_ID?: string;
 }
 
 export const POST: APIRoute = async ({ request }) => {
@@ -19,8 +20,8 @@ export const POST: APIRoute = async ({ request }) => {
   return handleWaitlistSubmit(
     request,
     e.MAILERLITE_API_KEY,
-    e.MAILERLITE_CONSULTING_GROUP_ID,
-    'Consulting waitlist',
+    e.MAILERLITE_BLUEPRINT_GROUP_ID,
+    'Blueprint waitlist',
   );
 };
 

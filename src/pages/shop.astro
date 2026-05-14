@@ -12,7 +12,7 @@ import Layout from "../layouts/Layout.astro";
   </h1>
 
   <div class="mt-12 grid md:grid-cols-2 gap-6">
-    <article class="border border-charcoal-lighter bg-charcoal-light p-6">
+    <article class="border border-charcoal-lighter bg-charcoal-light p-6 flex flex-col">
       <div class="aspect-square bg-charcoal flex items-center justify-center text-center px-6 border border-charcoal-lighter">
         <span class="font-serif text-2xl tracking-tight text-ink leading-tight">
           MY TOKENS.<br/>
@@ -23,9 +23,32 @@ import Layout from "../layouts/Layout.astro";
       <h2 class="font-serif text-xl mt-1">Flagship Tee</h2>
       <p class="text-sm text-ink-dim mt-1 font-mono">The slogan, on cotton.</p>
       <p class="text-xs text-ink-dimmer mt-3 font-mono uppercase tracking-widest">Coming soon</p>
+
+      <form
+        id="tee-waitlist-form"
+        class="mt-4 flex flex-col sm:flex-row gap-2 sm:gap-0"
+        action="/api/tee-waitlist"
+        method="post"
+        novalidate
+      >
+        <input
+          type="email"
+          name="email"
+          placeholder="you@domain.com"
+          required
+          autocomplete="email"
+          class="flex-1 bg-charcoal border border-charcoal-lighter px-3 py-2 text-sm focus:outline-none focus:border-green text-ink font-mono min-w-0"
+        />
+        <button
+          type="submit"
+          id="tee-waitlist-submit"
+          class="bg-green text-charcoal px-4 py-2 text-xs font-mono font-medium uppercase tracking-widest hover:bg-green-deep transition-colors whitespace-nowrap disabled:opacity-50 disabled:cursor-not-allowed"
+        >Notify on Drop</button>
+      </form>
+      <p id="tee-waitlist-result" class="mt-2 text-xs font-mono" aria-live="polite"></p>
     </article>
 
-    <article class="border border-charcoal-lighter bg-charcoal-light p-6 opacity-60">
+    <article class="border border-charcoal-lighter bg-charcoal-light p-6 opacity-60 flex flex-col">
       <div class="aspect-square bg-charcoal flex items-center justify-center border border-charcoal-lighter">
         <span class="text-ink-dimmer text-xs font-mono uppercase tracking-widest">Future drop</span>
       </div>
@@ -33,6 +56,86 @@ import Layout from "../layouts/Layout.astro";
       <h2 class="font-serif text-xl mt-1">Local-First AI Blueprint</h2>
       <p class="text-sm text-ink-dim mt-1 font-mono">PDF + repo template. Build your own NEXUS.</p>
       <p class="text-xs text-ink-dimmer mt-3 font-mono uppercase tracking-widest">Coming soon</p>
+
+      <form
+        id="blueprint-waitlist-form"
+        class="mt-4 flex flex-col sm:flex-row gap-2 sm:gap-0"
+        action="/api/blueprint-waitlist"
+        method="post"
+        novalidate
+      >
+        <input
+          type="email"
+          name="email"
+          placeholder="you@domain.com"
+          required
+          autocomplete="email"
+          class="flex-1 bg-charcoal border border-charcoal-lighter px-3 py-2 text-sm focus:outline-none focus:border-green text-ink font-mono min-w-0"
+        />
+        <button
+          type="submit"
+          id="blueprint-waitlist-submit"
+          class="bg-green text-charcoal px-4 py-2 text-xs font-mono font-medium uppercase tracking-widest hover:bg-green-deep transition-colors whitespace-nowrap disabled:opacity-50 disabled:cursor-not-allowed"
+        >Notify on Drop</button>
+      </form>
+      <p id="blueprint-waitlist-result" class="mt-2 text-xs font-mono" aria-live="polite"></p>
     </article>
   </div>
+
+  <script is:inline>
+    (() => {
+      // Generic waitlist form handler — both shop forms use the same pattern.
+      // Submits the email to the form's action URL, renders inline result.
+      const wire = (formId, submitId, resultId, successMsg) => {
+        const form = document.getElementById(formId);
+        const submit = document.getElementById(submitId);
+        const result = document.getElementById(resultId);
+        if (!form || !submit || !result) return;
+
+        form.addEventListener('submit', async (ev) => {
+          ev.preventDefault();
+          const fd = new FormData(form);
+          const email = String(fd.get('email') || '').trim();
+          if (!email) {
+            result.textContent = 'Please enter an email address.';
+            result.className = 'mt-2 text-xs font-mono text-ink-dim';
+            return;
+          }
+          const originalText = submit.textContent;
+          submit.disabled = true;
+          submit.textContent = 'Adding...';
+          result.textContent = '';
+          try {
+            const resp = await fetch(form.action, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ email }),
+            });
+            let data = {};
+            try { data = await resp.json(); } catch { /* ignore */ }
+            if (resp.ok && data && data.ok) {
+              result.textContent = successMsg;
+              result.className = 'mt-2 text-xs font-mono text-green';
+              form.reset();
+            } else {
+              const msg = (data && data.error) || 'Subscription failed. Please try again.';
+              result.textContent = msg;
+              result.className = 'mt-2 text-xs font-mono text-ink-dim';
+            }
+          } catch (e) {
+            result.textContent = 'Could not reach the server. Please try again, or email contact@timraysby.com.';
+            result.className = 'mt-2 text-xs font-mono text-ink-dim';
+          } finally {
+            submit.disabled = false;
+            submit.textContent = originalText;
+          }
+        });
+      };
+
+      wire('tee-waitlist-form', 'tee-waitlist-submit', 'tee-waitlist-result',
+        "Got it. I'll ping you when the Tee drops.");
+      wire('blueprint-waitlist-form', 'blueprint-waitlist-submit', 'blueprint-waitlist-result',
+        "You're in. I'll send the Blueprint the day it drops.");
+    })();
+  </script>
 </Layout>
