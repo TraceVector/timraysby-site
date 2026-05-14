@@ -42,11 +42,18 @@ export function isValidEmail(email: string): boolean {
  * Add a subscriber to a MailerLite group. Idempotent — MailerLite returns
  * 200/201 even if the email is already subscribed. Returns a structured
  * result the calling route translates to its own JSON response shape.
+ *
+ * `fields` lets callers attach custom subscriber data (name, company,
+ * arbitrary text fields). MailerLite-side: built-in fields (name,
+ * last_name, company, country, phone, city, state, zip) are accepted
+ * directly; any other key must be defined as a custom field in the
+ * MailerLite UI first or the upstream returns 422.
  */
 export async function addSubscriberToGroup(
   email: string,
   groupId: string | undefined,
   apiKey: string,
+  fields?: Record<string, string>,
 ): Promise<{ ok: true } | { ok: false; reason: string; upstreamStatus?: number }> {
   let resp: Response;
   try {
@@ -61,6 +68,7 @@ export async function addSubscriberToGroup(
         email,
         status: 'active',
         groups: groupId ? [groupId] : undefined,
+        fields: fields && Object.keys(fields).length ? fields : undefined,
       }),
     });
   } catch (e) {
@@ -91,6 +99,7 @@ export async function handleWaitlistSubmit(
   apiKey: string | undefined,
   groupId: string | undefined,
   waitlistLabel: string,
+  fields?: Record<string, string>,
 ): Promise<Response> {
   const email = await parseEmailFromRequest(request);
   if (email === null) {
@@ -105,7 +114,7 @@ export async function handleWaitlistSubmit(
       500,
     );
   }
-  const result = await addSubscriberToGroup(email, groupId, apiKey);
+  const result = await addSubscriberToGroup(email, groupId, apiKey, fields);
   if (!result.ok) {
     const msg = result.reason === 'network'
       ? 'Could not reach the waitlist service. Try again in a moment.'
@@ -114,4 +123,33 @@ export async function handleWaitlistSubmit(
     return jsonResponse({ error: msg }, status);
   }
   return jsonResponse({ ok: true }, 200);
+}
+
+/**
+ * Parse the request body as JSON OR form-data and return a string-typed
+ * dict of all top-level keys. Used by endpoints that need more than just
+ * the email field (consulting-waitlist accepts name/company/problem too).
+ * Returns null on parse failure.
+ */
+export async function parseFormBody(request: Request): Promise<Record<string, string> | null> {
+  try {
+    const ct = request.headers.get('content-type') || '';
+    if (ct.includes('application/json')) {
+      const data = await request.json();
+      if (!data || typeof data !== 'object') return {};
+      const out: Record<string, string> = {};
+      for (const [k, v] of Object.entries(data as Record<string, unknown>)) {
+        out[k] = String(v ?? '').trim();
+      }
+      return out;
+    }
+    const form = await request.formData();
+    const out: Record<string, string> = {};
+    for (const [k, v] of form.entries()) {
+      out[k] = String(v).trim();
+    }
+    return out;
+  } catch {
+    return null;
+  }
 }

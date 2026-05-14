@@ -2,45 +2,357 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Consulting — Tim Raysby">
-  <p class="text-xs font-mono uppercase tracking-widest text-green mb-4 flex items-center gap-3">
-    <span class="w-8 h-px bg-green"></span>
-    Consulting
-  </p>
-  <h1 class="font-serif text-4xl md:text-5xl font-light tracking-tight">
-    Local-AI architecture for teams that want <em>sovereignty</em>.
-  </h1>
+<Layout
+  title="Consulting — Tim Raysby"
+  description="Selective consulting on production-grade agentic AI systems. Currently considering 1-2 engagements per quarter."
+  wide
+>
 
-  <div class="mt-12 p-6 sm:p-8 border border-charcoal-lighter bg-charcoal-light max-w-xl relative">
-    <div class="absolute -top-1 -left-1 w-3 h-3 border-l border-t border-green/60" aria-hidden="true"></div>
-    <div class="absolute -top-1 -right-1 w-3 h-3 border-r border-t border-green/60" aria-hidden="true"></div>
+  <!-- ═══════════════════════════════════════ HERO ═══════════════════════════════════════ -->
+  <section class="pt-4 pb-20 md:pb-24">
+    <div class="inline-flex items-center gap-2.5 px-4 py-2 border border-green bg-green/10 font-mono text-[11px] tracking-[0.2em] uppercase text-green mb-8">
+      <span class="w-2 h-2 bg-green rounded-full animate-pulse"></span>
+      Selective &middot; 1&ndash;2 engagements per quarter
+    </div>
+    <h1 class="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal leading-none tracking-tight mb-8 max-w-4xl">
+      Production-grade <em class="italic text-green font-normal">Agent Stacks</em> for operators ready to ship.
+    </h1>
+    <p class="max-w-2xl text-base md:text-lg leading-relaxed text-ink mb-10">
+      Most AI projects demo well and die in production. I help technical teams move
+      agentic AI from prototype to enterprise reality &mdash; designing the agent workflows,
+      building the cloud infrastructure they run on, and orchestrating the pieces so the
+      system actually works under real load.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-6 sm:gap-12 text-xs text-ink-dim uppercase tracking-wider font-mono pt-6 border-t border-charcoal-lighter">
+      <div>
+        <span>Current availability</span>
+        <span class="block mt-1.5 text-ink font-medium text-[13px] normal-case tracking-normal">
+          Notify-only &middot; evaluating fit on a per-engagement basis
+        </span>
+      </div>
+      <div>
+        <span>Best fits</span>
+        <span class="block mt-1.5 text-ink font-medium text-[13px] normal-case tracking-normal">
+          Technical buyers with production AI needs
+        </span>
+      </div>
+    </div>
+  </section>
 
-    <p class="text-ink font-mono text-sm">Currently fully booked.</p>
-    <p class="mt-2 text-xs text-ink-dim font-mono">Engagement slots open quarterly. Get on the list and I will reach out when a window opens.</p>
+  <!-- ═══════════════════════════════════════ THE SERVICE ═══════════════════════════════════════ -->
+  <section class="py-20 md:py-24 border-t border-charcoal-lighter">
+    <p class="text-xs font-mono uppercase tracking-widest text-green mb-5 flex items-center gap-3">
+      <span class="w-7 h-px bg-green"></span>
+      The Service
+    </p>
+    <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-normal leading-tight tracking-tight mb-8 max-w-3xl">
+      An <em class="italic text-green font-normal">Agent Stack</em> is the layered system that turns generic LLMs into a working part of your business.
+    </h2>
+    <p class="text-base md:text-lg leading-relaxed text-ink max-w-3xl mb-4">
+      Most "AI consulting" today is a demo wrapper around an API key. An Agent Stack
+      is different &mdash; it's the production infrastructure, agent orchestration, and
+      business-specific knowledge integration that determines whether your AI runs at
+      2 a.m. on a Sunday, or fails silently when it matters.
+    </p>
 
-    <form
-      id="consulting-waitlist-form"
-      class="mt-6 flex flex-col sm:flex-row gap-2 sm:gap-0"
-      action="/api/consulting-waitlist"
-      method="post"
-      novalidate
-    >
-      <input
-        type="email"
-        name="email"
-        placeholder="you@domain.com"
-        required
-        autocomplete="email"
-        class="flex-1 bg-charcoal border border-charcoal-lighter px-3 py-2 text-sm focus:outline-none focus:border-green text-ink font-mono min-w-0"
-      />
-      <button
-        type="submit"
-        id="consulting-waitlist-submit"
-        class="bg-green text-charcoal px-4 py-2 text-xs font-mono font-medium uppercase tracking-widest hover:bg-green-deep transition-colors whitespace-nowrap disabled:opacity-50 disabled:cursor-not-allowed"
-      >Notify Me</button>
-    </form>
-    <p id="consulting-waitlist-result" class="mt-3 text-xs font-mono" aria-live="polite"></p>
-  </div>
+    <div class="mt-14 border-t border-charcoal-lighter">
+
+      <!-- Layer 01 -->
+      <div class="grid md:grid-cols-[200px_1fr] gap-4 md:gap-12 py-10 border-b border-charcoal-lighter">
+        <div class="font-mono text-xs tracking-wider text-green uppercase pt-2">
+          <span class="block font-serif text-5xl md:text-6xl text-charcoal-lighter mb-3 font-light leading-none">01</span>
+          Foundation Layer
+        </div>
+        <div>
+          <h3 class="font-serif text-2xl md:text-3xl font-medium leading-tight mb-4">
+            Cloud infrastructure that doesn't fall over.
+          </h3>
+          <p class="text-ink-dim text-sm md:text-base leading-relaxed max-w-2xl">
+            Hosting, observability, secrets management, networking, identity, cost controls.
+            The boring foundation that determines whether your agent system is production
+            software or a science project. Built on infrastructure you own and operate
+            &mdash; no vendor lock-in.
+          </p>
+          <div class="flex flex-wrap gap-2 mt-5">
+            <span class="font-mono text-[11px] px-2.5 py-1 bg-charcoal-light text-ink-dim border border-charcoal-lighter">Infrastructure-as-code</span>
+            <span class="font-mono text-[11px] px-2.5 py-1 bg-charcoal-light text-ink-dim border border-charcoal-lighter">Observability</span>
+            <span class="font-mono text-[11px] px-2.5 py-1 bg-charcoal-light text-ink-dim border border-charcoal-lighter">Cost controls</span>
+            <span class="font-mono text-[11px] px-2.5 py-1 bg-charcoal-light text-ink-dim border border-charcoal-lighter">Self-hosted-ready</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Layer 02 -->
+      <div class="grid md:grid-cols-[200px_1fr] gap-4 md:gap-12 py-10 border-b border-charcoal-lighter">
+        <div class="font-mono text-xs tracking-wider text-green uppercase pt-2">
+          <span class="block font-serif text-5xl md:text-6xl text-charcoal-lighter mb-3 font-light leading-none">02</span>
+          Agent Layer
+        </div>
+        <div>
+          <h3 class="font-serif text-2xl md:text-3xl font-medium leading-tight mb-4">
+            Multi-model orchestration that handles real edge cases.
+          </h3>
+          <p class="text-ink-dim text-sm md:text-base leading-relaxed max-w-2xl">
+            Reasoning loops, tool calling, multi-agent coordination, model routing between
+            local and frontier providers, retry logic, error handling. The difference
+            between an agent that demos in a sandbox and one that operates against real
+            data with real consequences.
+          </p>
+          <div class="flex flex-wrap gap-2 mt-5">
+            <span class="font-mono text-[11px] px-2.5 py-1 bg-charcoal-light text-ink-dim border border-charcoal-lighter">Multi-agent orchestration</span>
+            <span class="font-mono text-[11px] px-2.5 py-1 bg-charcoal-light text-ink-dim border border-charcoal-lighter">Tool integration</span>
+            <span class="font-mono text-[11px] px-2.5 py-1 bg-charcoal-light text-ink-dim border border-charcoal-lighter">Model routing</span>
+            <span class="font-mono text-[11px] px-2.5 py-1 bg-charcoal-light text-ink-dim border border-charcoal-lighter">Failure handling</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Layer 03 -->
+      <div class="grid md:grid-cols-[200px_1fr] gap-4 md:gap-12 py-10 border-b border-charcoal-lighter">
+        <div class="font-mono text-xs tracking-wider text-green uppercase pt-2">
+          <span class="block font-serif text-5xl md:text-6xl text-charcoal-lighter mb-3 font-light leading-none">03</span>
+          Knowledge Layer
+        </div>
+        <div>
+          <h3 class="font-serif text-2xl md:text-3xl font-medium leading-tight mb-4">
+            The business context that makes generic AI yours.
+          </h3>
+          <p class="text-ink-dim text-sm md:text-base leading-relaxed max-w-2xl">
+            Retrieval strategy, document pipelines, vector stores, the institutional
+            knowledge that turns a clever model into a system that understands your
+            specific operation. Where the engagement moves from infrastructure work into
+            actually solving your problem.
+          </p>
+          <div class="flex flex-wrap gap-2 mt-5">
+            <span class="font-mono text-[11px] px-2.5 py-1 bg-charcoal-light text-ink-dim border border-charcoal-lighter">Retrieval architectures</span>
+            <span class="font-mono text-[11px] px-2.5 py-1 bg-charcoal-light text-ink-dim border border-charcoal-lighter">Document pipelines</span>
+            <span class="font-mono text-[11px] px-2.5 py-1 bg-charcoal-light text-ink-dim border border-charcoal-lighter">Domain ontologies</span>
+            <span class="font-mono text-[11px] px-2.5 py-1 bg-charcoal-light text-ink-dim border border-charcoal-lighter">Pattern reuse</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ PRINCIPLES ═══════════════════════════════════════ -->
+  <section class="py-20 md:py-24 border-t border-charcoal-lighter">
+    <p class="text-xs font-mono uppercase tracking-widest text-green mb-5 flex items-center gap-3">
+      <span class="w-7 h-px bg-green"></span>
+      How I Think About This
+    </p>
+    <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-normal leading-tight tracking-tight mb-2 max-w-3xl">
+      Three principles that <em class="italic text-green font-normal">shape every engagement</em>.
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mt-12">
+      <article class="p-8 bg-charcoal-light border border-charcoal-lighter hover:border-green transition-colors">
+        <div class="font-mono text-[11px] text-green tracking-widest mb-4">[ 01 ]</div>
+        <h3 class="font-serif text-xl md:text-2xl font-medium leading-snug mb-3">Solve once. Reuse forever.</h3>
+        <p class="text-ink-dim text-sm leading-relaxed">
+          Every pattern shipped in an engagement becomes part of a reusable corpus &mdash;
+          not throwaway prototype code. The architecture compounds across projects instead
+          of restarting every time. Long-term clients benefit from work done for earlier ones.
+        </p>
+      </article>
+
+      <article class="p-8 bg-charcoal-light border border-charcoal-lighter hover:border-green transition-colors">
+        <div class="font-mono text-[11px] text-green tracking-widest mb-4">[ 02 ]</div>
+        <h3 class="font-serif text-xl md:text-2xl font-medium leading-snug mb-3">Ownership over convenience.</h3>
+        <p class="text-ink-dim text-sm leading-relaxed">
+          Your AI stack should run on infrastructure you own. No critical workflows locked
+          behind a third-party API that can deprecate, rate-limit, or change pricing without
+          notice. Self-hosted where it matters; managed services only where the trade-off
+          makes sense.
+        </p>
+      </article>
+
+      <article class="p-8 bg-charcoal-light border border-charcoal-lighter hover:border-green transition-colors">
+        <div class="font-mono text-[11px] text-green tracking-widest mb-4">[ 03 ]</div>
+        <h3 class="font-serif text-xl md:text-2xl font-medium leading-snug mb-3">Production beats demo, always.</h3>
+        <p class="text-ink-dim text-sm leading-relaxed">
+          The interesting work in agentic AI isn't getting a happy-path demo to work. It's
+          the edge cases, the failure modes, the 2 a.m. alerts, the silent regressions.
+          Engineering discipline applied to AI systems, not AI enthusiasm dressed up as
+          engineering.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ REFERENCE BUILD (SANITIZED) ═══════════════════════════════════════ -->
+  <section class="py-20 md:py-24 border-t border-charcoal-lighter">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-start">
+
+      <div>
+        <p class="text-xs font-mono uppercase tracking-widest text-green mb-5 flex items-center gap-3">
+          <span class="w-7 h-px bg-green"></span>
+          Reference Build
+        </p>
+        <h2 class="font-serif text-3xl sm:text-4xl font-normal leading-tight tracking-tight mb-6">
+          I run the <em class="italic text-green font-normal">same architecture</em> on my own work first.
+        </h2>
+        <p class="text-ink text-base leading-relaxed mb-5">
+          Before recommending an Agent Stack to anyone, I'm running one on my own
+          operation. Multi-agent orchestration, pattern reuse, local-first model
+          routing &mdash; the full architecture applied to my own work as the reference
+          implementation behind the consulting.
+        </p>
+        <p class="text-ink-dim text-sm leading-relaxed">
+          It's the proof the patterns work in real conditions, not just slides. The same
+          architecture gets applied to client engagements with their specific knowledge
+          layer.
+        </p>
+      </div>
+
+      <div class="relative bg-charcoal-light border border-green p-8 md:p-10 mt-2">
+        <span class="absolute -top-2 left-6 bg-charcoal px-3 font-mono text-[10px] tracking-[0.25em] text-green">// REFERENCE BUILD</span>
+        <h3 class="font-serif text-2xl md:text-3xl font-normal text-green tracking-tight mb-3">Production runtime</h3>
+        <p class="font-mono text-xs text-ink-dim italic mb-5">// proof it ships, not what it ships on</p>
+        <p class="text-ink text-sm leading-relaxed mb-3">
+          Scheduled jobs firing on time every day. Content publishing autonomously across
+          multiple platforms. Voice capture, transcription, and content generation running
+          on operator-owned hardware.
+        </p>
+        <p class="text-ink text-sm leading-relaxed mb-5">
+          No cloud-LLM dependency in the production path. Failures are boring &mdash; logged,
+          retried, surfaced for review. Operator data stays on operator hardware.
+        </p>
+        <div class="font-mono text-[11px] leading-loose text-ink-dim mt-6 pt-5 border-t border-charcoal-lighter">
+          <div><span class="text-green">runtime:</span> 24/7, autonomous, self-healing</div>
+          <div><span class="text-green">deploy boundary:</span> operator-owned hardware</div>
+          <div><span class="text-green">vendor surface:</span> minimized by design</div>
+          <div><span class="text-green">status:</span> shipping in production</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ FIT QUALIFIER ═══════════════════════════════════════ -->
+  <section class="py-20 md:py-24 border-t border-charcoal-lighter">
+    <p class="text-xs font-mono uppercase tracking-widest text-green mb-5 flex items-center gap-3">
+      <span class="w-7 h-px bg-green"></span>
+      Engagement Fit
+    </p>
+    <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-normal leading-tight tracking-tight mb-2 max-w-3xl">
+      Not every problem is a fit. <em class="italic text-green font-normal">Be honest with yourself</em> before reaching out.
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mt-14">
+      <div class="p-8 bg-charcoal-light border border-green">
+        <h4 class="font-mono text-[11px] tracking-widest uppercase text-green mb-5">+ Good fit</h4>
+        <ul class="text-sm leading-relaxed">
+          <li class="text-ink py-2.5 pl-7 relative border-b border-dashed border-charcoal-lighter before:content-['+'] before:absolute before:left-0 before:text-green before:font-bold before:font-mono">You have a real production AI need, not a "we should explore AI" mandate</li>
+          <li class="text-ink py-2.5 pl-7 relative border-b border-dashed border-charcoal-lighter before:content-['+'] before:absolute before:left-0 before:text-green before:font-bold before:font-mono">You're a technical buyer or have a technical lead in the loop</li>
+          <li class="text-ink py-2.5 pl-7 relative border-b border-dashed border-charcoal-lighter before:content-['+'] before:absolute before:left-0 before:text-green before:font-bold before:font-mono">You have budget for engineering work, not hackathon pricing</li>
+          <li class="text-ink py-2.5 pl-7 relative border-b border-dashed border-charcoal-lighter before:content-['+'] before:absolute before:left-0 before:text-green before:font-bold before:font-mono">You want to own your infrastructure, not be locked into a vendor</li>
+          <li class="text-ink py-2.5 pl-7 relative border-b border-dashed border-charcoal-lighter before:content-['+'] before:absolute before:left-0 before:text-green before:font-bold before:font-mono">You've already tried something with AI and hit a real limitation</li>
+          <li class="text-ink py-2.5 pl-7 relative before:content-['+'] before:absolute before:left-0 before:text-green before:font-bold before:font-mono">You can articulate the specific function you want agents to handle</li>
+        </ul>
+      </div>
+
+      <div class="p-8 bg-charcoal-light border border-charcoal-lighter">
+        <h4 class="font-mono text-[11px] tracking-widest uppercase text-ink-dimmer mb-5">&minus; Not a fit (right now)</h4>
+        <ul class="text-sm leading-relaxed">
+          <li class="text-ink-dim py-2.5 pl-7 relative border-b border-dashed border-charcoal-lighter before:content-['\2212'] before:absolute before:left-0 before:text-ink-dimmer before:font-bold before:font-mono">You need someone urgently &mdash; I have a day role and limited capacity</li>
+          <li class="text-ink-dim py-2.5 pl-7 relative border-b border-dashed border-charcoal-lighter before:content-['\2212'] before:absolute before:left-0 before:text-ink-dimmer before:font-bold before:font-mono">You want a vendor-managed SaaS solution rather than owned infrastructure</li>
+          <li class="text-ink-dim py-2.5 pl-7 relative border-b border-dashed border-charcoal-lighter before:content-['\2212'] before:absolute before:left-0 before:text-ink-dimmer before:font-bold before:font-mono">Your goal is "explore AI" without a defined business outcome</li>
+          <li class="text-ink-dim py-2.5 pl-7 relative border-b border-dashed border-charcoal-lighter before:content-['\2212'] before:absolute before:left-0 before:text-ink-dimmer before:font-bold before:font-mono">You need a turnkey product, not custom engineering</li>
+          <li class="text-ink-dim py-2.5 pl-7 relative border-b border-dashed border-charcoal-lighter before:content-['\2212'] before:absolute before:left-0 before:text-ink-dimmer before:font-bold before:font-mono">You're shopping ChatGPT wrappers and want the cheapest option</li>
+          <li class="text-ink-dim py-2.5 pl-7 relative before:content-['\2212'] before:absolute before:left-0 before:text-ink-dimmer before:font-bold before:font-mono">You can't articulate what success looks like beyond "use AI"</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ NOTIFY / CONTACT ═══════════════════════════════════════ -->
+  <section id="notify" class="py-20 md:py-24 border-t border-charcoal-lighter">
+    <div class="max-w-2xl">
+      <p class="text-xs font-mono uppercase tracking-widest text-green mb-5 flex items-center gap-3">
+        <span class="w-7 h-px bg-green"></span>
+        Get Notified
+      </p>
+      <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-normal leading-tight tracking-tight mb-2">
+        Currently <em class="italic text-green font-normal">fully booked</em>.
+      </h2>
+
+      <div class="text-sm leading-relaxed text-ink-dim mt-10 mb-10 p-5 bg-charcoal-light border-l-[3px] border-green">
+        <p>
+          <strong class="text-green font-medium">Honest status:</strong> I architect agentic
+          AI systems at a major insurer during the day and build the reference stack in the
+          evenings. I take on <strong class="text-ink font-medium">1&ndash;2 external engagements per quarter</strong>,
+          evaluated on fit.
+        </p>
+        <p class="mt-3">
+          The notify list is how I let prospective fits know when capacity opens up. Tell
+          me what you're trying to ship &mdash; if it's a good match, I'll reach out when the
+          timing works on both sides.
+        </p>
+      </div>
+
+      <form
+        id="consulting-waitlist-form"
+        action="/api/consulting-waitlist"
+        method="post"
+        novalidate
+        class="grid gap-4"
+      >
+        <div>
+          <label for="cw-name" class="font-mono text-[11px] tracking-widest uppercase text-ink-dim mb-2 block">Name</label>
+          <input
+            id="cw-name"
+            type="text"
+            name="name"
+            required
+            maxlength="100"
+            autocomplete="name"
+            class="w-full bg-charcoal-light border border-charcoal-lighter px-4 py-3 text-ink font-mono text-sm focus:outline-none focus:border-green transition-colors"
+          />
+        </div>
+        <div>
+          <label for="cw-email" class="font-mono text-[11px] tracking-widest uppercase text-ink-dim mb-2 block">Email</label>
+          <input
+            id="cw-email"
+            type="email"
+            name="email"
+            required
+            autocomplete="email"
+            class="w-full bg-charcoal-light border border-charcoal-lighter px-4 py-3 text-ink font-mono text-sm focus:outline-none focus:border-green transition-colors"
+          />
+        </div>
+        <div>
+          <label for="cw-company" class="font-mono text-[11px] tracking-widest uppercase text-ink-dim mb-2 block">Company / Role (optional)</label>
+          <input
+            id="cw-company"
+            type="text"
+            name="company"
+            maxlength="200"
+            autocomplete="organization"
+            class="w-full bg-charcoal-light border border-charcoal-lighter px-4 py-3 text-ink font-mono text-sm focus:outline-none focus:border-green transition-colors"
+          />
+        </div>
+        <div>
+          <label for="cw-problem" class="font-mono text-[11px] tracking-widest uppercase text-ink-dim mb-2 block">What are you trying to ship?</label>
+          <textarea
+            id="cw-problem"
+            name="problem"
+            required
+            maxlength="5000"
+            rows="5"
+            placeholder="The specific business function or technical problem you'd want an Agent Stack to solve. Be concrete."
+            class="w-full bg-charcoal-light border border-charcoal-lighter px-4 py-3 text-ink font-mono text-sm focus:outline-none focus:border-green transition-colors resize-y min-h-[120px] leading-relaxed"
+          ></textarea>
+        </div>
+        <button
+          type="submit"
+          id="consulting-waitlist-submit"
+          class="mt-3 px-8 py-4 bg-green text-charcoal border border-green font-mono text-xs font-semibold tracking-[0.18em] uppercase hover:bg-charcoal hover:text-green transition-colors justify-self-start disabled:opacity-50 disabled:cursor-not-allowed"
+        >Get on the list &rarr;</button>
+      </form>
+      <p id="consulting-waitlist-result" class="mt-4 text-sm font-mono" aria-live="polite"></p>
+    </div>
+  </section>
 
   <script is:inline>
     (() => {
@@ -52,52 +364,57 @@ import Layout from "../layouts/Layout.astro";
       form.addEventListener('submit', async (ev) => {
         ev.preventDefault();
         const fd = new FormData(form);
-        const email = String(fd.get('email') || '').trim();
-        if (!email) {
-          result.textContent = 'Please enter an email address.';
-          result.className = 'mt-3 text-xs font-mono text-ink-dim';
+        const payload = {
+          name: String(fd.get('name') || '').trim(),
+          email: String(fd.get('email') || '').trim(),
+          company: String(fd.get('company') || '').trim(),
+          problem: String(fd.get('problem') || '').trim(),
+        };
+        if (!payload.name) {
+          result.textContent = 'Please enter your name.';
+          result.className = 'mt-4 text-sm font-mono text-ink-dim';
           return;
         }
+        if (!payload.email) {
+          result.textContent = 'Please enter your email.';
+          result.className = 'mt-4 text-sm font-mono text-ink-dim';
+          return;
+        }
+        if (!payload.problem) {
+          result.textContent = "Please tell me what you're trying to ship.";
+          result.className = 'mt-4 text-sm font-mono text-ink-dim';
+          return;
+        }
+        const originalText = submit.textContent;
         submit.disabled = true;
-        submit.textContent = 'Adding...';
+        submit.textContent = 'Submitting...';
         result.textContent = '';
         try {
-          const resp = await fetch('/api/consulting-waitlist', {
+          const resp = await fetch(form.action, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email }),
+            body: JSON.stringify(payload),
           });
           let data = {};
           try { data = await resp.json(); } catch { /* ignore */ }
           if (resp.ok && data && data.ok) {
-            result.textContent = "Got you. I'll reach out when a slot opens.";
-            result.className = 'mt-3 text-xs font-mono text-green';
+            result.textContent = "You're on the list. I'll reach out when a slot opens and the fit looks right.";
+            result.className = 'mt-4 text-sm font-mono text-green';
             form.reset();
           } else {
-            const msg = (data && data.error) || 'Subscription failed. Please try again.';
+            const msg = (data && data.error) || 'Submission failed. Please try again.';
             result.textContent = msg;
-            result.className = 'mt-3 text-xs font-mono text-ink-dim';
+            result.className = 'mt-4 text-sm font-mono text-ink-dim';
           }
         } catch (e) {
           result.textContent = 'Could not reach the server. Please try again, or email contact@timraysby.com.';
-          result.className = 'mt-3 text-xs font-mono text-ink-dim';
+          result.className = 'mt-4 text-sm font-mono text-ink-dim';
         } finally {
           submit.disabled = false;
-          submit.textContent = 'Notify Me';
+          submit.textContent = originalText;
         }
       });
     })();
   </script>
 
-  <div class="mt-16 max-w-2xl">
-    <h2 class="text-xs font-mono uppercase tracking-widest text-green mb-6 flex items-center gap-3">
-      <span class="w-8 h-px bg-green"></span>
-      What I work on
-    </h2>
-    <ul class="space-y-3 text-sm text-ink-dim font-mono">
-      <li class="flex gap-4"><span class="text-green-deep">[01]</span><span>Architecting on-premise AI stacks — Ollama, vLLM, custom routing</span></li>
-      <li class="flex gap-4"><span class="text-green-deep">[02]</span><span>Replacing cloud-AI subscriptions with sovereign equivalents</span></li>
-      <li class="flex gap-4"><span class="text-green-deep">[03]</span><span>Privacy-first internal tooling for content, research, and automation</span></li>
-    </ul>
-  </div>
 </Layout>
